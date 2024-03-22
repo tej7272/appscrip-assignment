@@ -8,6 +8,7 @@ const Dashboard = () => {
     const [productData, setProductData] = useState();
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [toggle, setToggle] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -34,15 +35,15 @@ const Dashboard = () => {
             <div className='dashboard-menu'>
                 <div>
                     <span>{productData ? productData.length : 0} items</span>
-                    <span className='dashboard-toggle'><RiArrowLeftSLine />Hide Filters</span>
+                    <span className='show-hide' onClick={() => setToggle(!toggle)} ><RiArrowLeftSLine />{toggle ?"Hide Filters":"Show filters"}</span>
                 </div>
                 <div> Recommended</div>
             </div>
             <div className='dashboard-content'>
-                <div className='dashboard-filters'>
+                {toggle &&<div className='dashboard-filters'>
                     <Filter />
-                </div>
-                <div className='dashboard-products'>
+                </div>}
+                <div className={`dashboard-products ${!toggle? "dashboard-toggle":"dashboard-notoggle"}`} >
                     {loading ? (
                         <div>Loading...</div>
                     ) : error ? (
@@ -50,7 +51,7 @@ const Dashboard = () => {
                     ) : productData.length === 0 ? (
                         <div>No products available</div>
                     ) : (
-                        productData.map((item, index) => <Products item={item} key={index} />)
+                        productData.map((item, index) => <Products item={item} key={index}  toggle={toggle}/>)
                     )}
                 </div>
             </div>
