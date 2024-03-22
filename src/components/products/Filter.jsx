@@ -5,42 +5,42 @@ import { gender, occasion, work, fabric, segment, suitable, materials, Pattern }
 const Filter = () => {
     const [toggle, setToggle] = useState({ gender: false, occasion: false, work: false, fabric: false, segment: false, suitable: false, materials: false, Pattern: false })
     return (
-        <div>
+        <>
             <input type='checkbox' />
-            <label>Customizble</label>
+            <label className='customize'>Customizble</label>
 
             <div>
                 <div onClick={() => setToggle({ ...toggle, gender: !toggle.gender })}>
-                    <div>
+                    <div className='filter-content'>
                         <span>IDEAL FOR</span>
-                        <HiOutlineChevronDown style={{ float: 'right' }} />
-                        <span style={{ display: 'block' }}>All</span>
+                        <HiOutlineChevronDown />
+                        <span >All</span>
 
                     </div>
 
                 </div>
                 {toggle.gender && <div>
-                    <button>Unselect all</button>
-                    {gender.map((gender) => {
-                        return <div>
+                    <button className='clear-btn'>Unselect all</button>
+                    {gender.map((gender, index) => {
+                        return <div className='filter-checkbox' key={index}>
                             <input type='checkbox' />
-                            <label>{gender}</label>
+                            <label className='filter-label'>{gender}</label>
                         </div>
                     })}
                 </div>}
                 <div onClick={() => setToggle({ ...toggle, occasion: !toggle.occasion })}>
-                    <div>
+                    <div className='filter-content'>
                         <span>occasion</span>
-                        <HiOutlineChevronDown style={{ float: 'right' }} />
-                        <span style={{ display: 'block' }}>All</span>
+                        <HiOutlineChevronDown />
+                        <span >All</span>
 
                     </div>
 
                 </div>
                 {toggle.occasion && <div>
-                    <button>Unselect all</button>
-                    {occasion.map((occasion) => {
-                        return <div>
+                    <button className='clear-btn'>Unselect all</button>
+                    {occasion.map((occasion, index) => {
+                        return <div className='filter-checkbox' key={index}>
                             <input type='checkbox' />
                             <label>{occasion}</label>
                         </div>
@@ -49,17 +49,17 @@ const Filter = () => {
                 }
 
                 <div onClick={() => setToggle({ ...toggle, work: !toggle.work })}>
-                    <div>
+                    <div className='filter-content'>
                         <span>Work</span>
-                        <HiOutlineChevronDown style={{ float: 'right' }} />
-                        <span style={{ display: 'block' }}>All</span>
+                        <HiOutlineChevronDown />
+                        <span>All</span>
                     </div>
 
                 </div>
                 {toggle.work && <div>
-                    <button>Unselect all</button>
-                    {work.map((work) => {
-                        return <div>
+                    <button className='clear-btn'>Unselect all</button>
+                    {work.map((work, index) => {
+                        return <div className='filter-checkbox' key={index}>
                             <input type='checkbox' />
                             <label>{work}</label>
                         </div>
@@ -68,19 +68,17 @@ const Filter = () => {
                 }
 
                 <div onClick={() => setToggle({ ...toggle, fabric: !toggle.fabric })}>
-                    <div>
+                    <div className='filter-content'>
                         <span>fabric</span>
-                        <HiOutlineChevronDown style={{ float: 'right' }} />
-                        <span style={{ display: 'block' }}>All</span>
+                        <HiOutlineChevronDown />
+                        <span >All</span>
                     </div>
-
-
                 </div>
 
                 {toggle.fabric && <div>
-                    <button>Unselect all</button>
-                    {fabric.map((fabric) => {
-                        return <div>
+                    <button className='clear-btn'>Unselect all</button>
+                    {fabric.map((fabric, index) => {
+                        return <div className='filter-checkbox' key={index}>
                             <input type='checkbox' />
                             <label>{fabric}</label>
                         </div>
@@ -89,19 +87,17 @@ const Filter = () => {
                 }
 
                 <div onClick={() => setToggle({ ...toggle, segment: !toggle.segment })}>
-                    <div>
+                    <div className='filter-content'>
                         <span>segment</span>
-                        <HiOutlineChevronDown style={{ float: 'right' }} />
-                        <span style={{ display: 'block' }}>All</span>
+                        <HiOutlineChevronDown />
+                        <span >All</span>
                     </div>
-
-
                 </div>
 
                 {toggle.segment && <div>
-                    <button>Unselect all</button>
-                    {segment.map((segment) => {
-                        return <div>
+                    <button className='clear-btn'>Unselect all</button>
+                    {segment.map((segment, index) => {
+                        return <div className='filter-checkbox' key={index}>
                             <input type='checkbox' />
                             <label>{segment}</label>
                         </div>
@@ -110,18 +106,16 @@ const Filter = () => {
                 }
 
                 <div onClick={() => setToggle({ ...toggle, suitable: !toggle.suitable })} >
-                    <div>
+                    <div className='filter-content'>
                         <span>suitable for</span>
-                        <HiOutlineChevronDown style={{ float: 'right' }} />
-                        <span style={{ display: 'block' }}>All</span>
+                        <HiOutlineChevronDown />
+                        <span >All</span>
                     </div>
-
-
                 </div>
                 {toggle.suitable && <div>
-                    <button>Unselect all</button>
-                    {suitable.map((suitable) => {
-                        return <div>
+                    <button className='clear-btn'>Unselect all</button>
+                    {suitable.map((suitable, index) => {
+                        return <div className='filter-checkbox' key={index}>
                             <input type='checkbox' />
                             <label>{suitable}</label>
                         </div>
@@ -130,18 +124,17 @@ const Filter = () => {
                 }
 
                 <div onClick={() => setToggle({ ...toggle, materials: !toggle.materials })}>
-                    <div>
+                    <div className='filter-content'>
                         <span>Row materials</span>
-                        <HiOutlineChevronDown style={{ float: 'right' }} />
-                        <span style={{ display: 'block' }}>All</span>
+                        <HiOutlineChevronDown />
+                        <span >All</span>
                     </div>
-
-
                 </div>
+
                 {toggle.materials && <div>
-                    <button>Unselect all</button>
-                    {materials.map((material) => {
-                        return <div>
+                    <button className='clear-btn'>Unselect all</button>
+                    {materials.map((material, index) => {
+                        return <div className='filter-checkbox' key={index}>
                             <input type='checkbox' />
                             <label>{material}</label>
                         </div>
@@ -150,18 +143,16 @@ const Filter = () => {
                 }
 
                 <div onClick={() => setToggle({ ...toggle, Pattern: !toggle.Pattern })}>
-                    <div>
+                    <div className='filter-content'>
                         <span>Pattern</span>
-                        <HiOutlineChevronDown style={{ float: 'right' }} />
-                        <span style={{ display: 'block' }}>All</span>
+                        <HiOutlineChevronDown />
+                        <span >All</span>
                     </div>
-
-
                 </div>
                 {toggle.Pattern && <div>
-                    <button>Unselect all</button>
-                    {Pattern.map((Pattern) => {
-                        return <div>
+                    <button className='clear-btn'>Unselect all</button>
+                    {Pattern.map((Pattern, index) => {
+                        return <div className='filter-checkbox' key={index}>
                             <input type='checkbox' />
                             <label>{Pattern}</label>
                         </div>
@@ -170,7 +161,7 @@ const Filter = () => {
                 }
 
             </div>
-        </div>
+        </>
     )
 }
 
