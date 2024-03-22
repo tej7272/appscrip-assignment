@@ -39,7 +39,7 @@ const Dashboard = () => {
 
     return (
         <div className='dashboard'>
-            <div className='dashboard-menu'>
+            <div className='dashboard-menu lg'>
                 <div>
                     <span>{productData ? productData.length : 0} items</span>
                     <span className='show-hide' onClick={() => setToggle(!toggle)} ><RiArrowLeftSLine />{toggle ? "Hide Filters" : "Show filters"}</span>
@@ -55,6 +55,23 @@ const Dashboard = () => {
                     </ul>
                 </div>}
             </div>
+
+            <div className='dashboard-menu xs'>
+                <div>
+                    <span className='show-hide'>Filters</span>
+                </div>
+                <div onClick={() => { setToggleReco(!toggleReco) }}> Recommended <HiOutlineChevronDown /></div>
+                {toggleReco && <div className='recommendation'>
+                    <ul>
+                        <li onClick={handleListItemClick} >Recommended</li>
+                        <li onClick={handleListItemClick} >Newest First</li>
+                        <li onClick={handleListItemClick} >Popular</li>
+                        <li onClick={handleListItemClick} >Price: high to low</li>
+                        <li onClick={handleListItemClick} >Price: low to high</li>
+                    </ul>
+                </div>}
+            </div>
+
             <div className='dashboard-content'>
                 {toggle && <div className='dashboard-filters'>
                     <Filter />

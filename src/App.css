@@ -4,6 +4,15 @@ body {
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar{
+    width: 3px;
+    border: 2px solid #fffefe;
+}
+::-webkit-scrollbar-thumb{
+    width: 2px;
+    border: 2px solid #322828;
+}
+
 .App-link {
     color: #61dafb;
 }
@@ -58,6 +67,18 @@ li {
     font-weight: 650;
 }
 
+/* mobile navbar styling start from here  */
+
+.nav-xs{
+    display: none;
+}
+
+.nav-bottom{
+    display: none;
+}
+
+/* details contaniner start from here  */
+
 .detail {
     width: 25rem;
     margin: 2rem auto;
@@ -75,7 +96,6 @@ li {
 .dashboard-menu {
     border-bottom: 1px solid rgba(160, 160, 160, 0.6);
     border-top: 1px solid rgba(160, 160, 160, 0.6);
-    display: flex;
     justify-content: space-between;
     margin: 0 3rem;
     padding: 1.3rem 0;
@@ -178,6 +198,8 @@ li {
     flex-wrap: wrap;
     justify-content: center;
     margin:1rem 0;
+    height: 90vh;
+    overflow-y:scroll ;
 
 }
 
@@ -280,4 +302,123 @@ li {
 .copyright{
     text-align: center;
     padding: 1rem 0;
+}
+
+.xs{
+    display: none;
+}
+
+.lg{
+    display: flex;
+}
+
+.footer-xs{
+    display: none;
+}
+
+.footer-toggle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-view{
+    padding-bottom: 1rem;
+}
+
+@media screen and  (max-width: 920px){
+    .toggle-product{
+        width: 30%;
+    }
+    .single-product {
+        width: 38%;
+    }
+}
+
+@media screen and (max-width:769px){
+    .toggle-product{
+        width: 45%;
+    }
+    .single-product {
+        width: 38%;
+    }
+
+    .item-details>h4 {
+        font-size: 13px;
+    }
+    
+    .item-details>p {
+        font-size: 11px;
+    }
+
+    .footer-lg{
+        display: none;
+    }
+    .footer-xs{
+        display:block;
+    }
+}
+
+@media screen and (max-width:630px){
+    .nav-lg{
+        display: none;
+    }
+
+    .nav-xs{
+        display: block;
+    }
+
+    .logo-img{
+        display: flex;
+        gap: .6rem;
+    }
+
+    .logo-img > img{
+        width: 20px;
+    }
+
+    .nav-heading h1{
+        font-size: 20px;
+    }
+
+    .nav-list img{
+        width: 18px;
+    }
+
+    .nav-bottom{
+        display: block;
+        padding: .5rem 1rem ;
+    }
+    .nav-bottom > span:first-child{
+        opacity: .5;
+    }
+
+    /* details container start from here  */
+
+    .detail {
+        text-align: center;
+    }
+    .detail h1{
+        font-size: 23px;
+    }
+
+    .detail p{
+        font-size: 14px;
+    }
+
+    .dashboard-notoggle{
+        width: 100%;
+    }
+
+    .dashboard-filters{
+        display: none;
+    }
+
+    .lg{
+        display: none;
+    }
+
+    .xs{
+        display: flex;
+    }
 }
